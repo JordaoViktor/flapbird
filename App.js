@@ -1,9 +1,15 @@
 import React, { useEffect, useState } from 'react';
-import { StyleSheet, Text, View, Dimensions, TouchableWithoutFeedback } from 'react-native';
+import { StyleSheet, Text,ImageBackground, View, Dimensions, TouchableWithoutFeedback } from 'react-native';
 import Bird from './components/Bird'
 import Obstacles from './components/Obstacles'
+import background from './assets/background.jpg';
+// import { useFonts, SigmarOne_400Regular} from '@expo-google-fonts/sigmar-one'
 
 export default function App() {
+  // const [fontsLoaded] = useFonts({
+  //   SigmarOne_400Regular
+  // })
+
   const screenWidth = Dimensions.get("screen").width
   const screenHeight = Dimensions.get("screen").height
   const birdLeft = screenWidth / 2
@@ -99,8 +105,13 @@ export default function App() {
 
   return (
     <TouchableWithoutFeedback onPress={jump}>
-      <View style={styles.container}>
-      {isGameOver && <Text style={{fontSize: '30px'}}>{score}</Text>}
+      <ImageBackground source={background} style={styles.container}>
+      {isGameOver && (
+        <View style={styles.scoreModal}>
+          <Text style={styles.scoreText}>
+            Score: {score+ 1}
+          </Text>
+        </View>)}
         <Bird 
           birdBottom = {birdBottom} 
           birdLeft = {birdLeft}
@@ -121,7 +132,7 @@ export default function App() {
           gap={gap}
           obstaclesLeft={obstaclesLeftTwo}
         />
-      </View>
+      </ImageBackground>
     </TouchableWithoutFeedback>
   )
 }
@@ -129,8 +140,21 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'red',
     justifyContent: 'center',
     alignItems: 'center'
+  },
+  scoreText:{
+    fontSize: 50,
+    fontWeight: 'bold',
+     color:'#fff'
+  },
+  scoreModal:{
+    width:200,
+    height:200,
+    backgroundColor:'green',
+    alignItems: 'center',
+    justifyContent: 'center',
+    position: 'absolute',
+    zIndex:3,
   },
 })

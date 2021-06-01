@@ -1132,6 +1132,11 @@
     exec-sh "^0.3.2"
     minimist "^1.2.0"
 
+"@expo-google-fonts/sigmar-one@^0.1.0":
+  version "0.1.0"
+  resolved "https://registry.yarnpkg.com/@expo-google-fonts/sigmar-one/-/sigmar-one-0.1.0.tgz#e59f3856b050a4f48c0c12b1f062ac0e1485038a"
+  integrity sha512-FVef2CxRKcf1HTw4aKnKESF3vNfSEMxVS+EVAAVBNZ7nepLmnd/KRJktbCjMgA6WgAwBTsqG1i1c3bZMGjAdrg==
+
 "@expo/config-plugins@1.0.33", "@expo/config-plugins@^1.0.18":
   version "1.0.33"
   resolved "https://registry.yarnpkg.com/@expo/config-plugins/-/config-plugins-1.0.33.tgz#8ee78ea6f939f7e04606e9afa22b32139ea974a0"

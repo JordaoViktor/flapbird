@@ -1,18 +1,18 @@
 import React from 'react';
-import { View } from 'react-native';
-
+import { Image } from 'react-native';
+import Stitch from '../assets/stitch.png'
 const Bird = ({birdBottom, birdLeft}) => {
-  const birdWidth = 50 
+  const birdWidth = 60 
   const birdHeight = 60
   return (
-    <View style={{
+    <Image style={{
       position:'absolute',
-      backgroundColor:'blue',
+      // backgroundColor:'blue',
       width:birdWidth,
       height:60,
       left:birdLeft - (birdWidth/2),
       bottom:birdBottom - (birdHeight/2),
-    }}/>
+    }} source={Stitch}/>
   );
 }
 
